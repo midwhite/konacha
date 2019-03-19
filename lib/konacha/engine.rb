@@ -34,7 +34,7 @@ module Konacha
       end
     end
 
-    initializer "konacha.environment" do |app|
+    initializer "konacha.environment", after: :append_assets_path do |app|
       options = app.config.konacha
 
       options.spec_dir     ||= "spec/javascripts"
